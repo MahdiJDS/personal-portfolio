@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes apper {
+    from {
+        scale: 0.5
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section div {
+    animation: apper both;
+    animation-timeline: view(85% 0%);
+}
