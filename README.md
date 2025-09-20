@@ -29,9 +29,9 @@ This is my personal portfolio site – a dynamic, modern web app to showcase my 
 
 ---
 
-## 📸 Preview
+## 🚀 Demo
 
-![Portfolio Preview](./screenshot.png)
+[Portfolio Website](https://personal-portfolio-mocha-eta-77.vercel.app/)
 
 
 ---
