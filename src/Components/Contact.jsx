@@ -30,7 +30,7 @@ const Contact = () => {
     // useEffect(() => {
     //    localStorage.removeItem('DataC')
     // }, []);
-    
+
     useEffect(() => {
         const stored = localStorage.getItem("DataC");
         if (stored) {
@@ -50,25 +50,26 @@ const Contact = () => {
 
 
     const onSubmit = async (data) => {
-    toast.loading("Sending...");
+        toast.loading("Sending...");
 
-    try {
-      await emailjs.send(
-        "service_ID",   
-        "template_ID",  
-        data,
-        "public_KEY"    
-      );
+        try {
+            await emailjs.send(
+                process.env.EMAILJS_SERVICE_ID,
+                process.env.EMAILJS_TEMPLATE_ID,
+                data,
+                process.env.EMAILJS_PUBLIC_KEY
+            );
 
-      toast.dismiss();
-      toast.success("Message sent successfully!");
-      reset();
-    } catch (err) {
-      toast.dismiss();
-      toast.error("Failed to send message.");
-      console.error(err);
-    }
-  };
+
+            toast.dismiss();
+            toast.success("Message sent successfully!");
+            reset();
+        } catch (err) {
+            toast.dismiss();
+            toast.error("Failed to send message.");
+            console.error(err);
+        }
+    };
 
 
 
