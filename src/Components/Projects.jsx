@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay,EffectCoverflow } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 
 // استایل‌ها
 import "swiper/css";
@@ -55,7 +55,7 @@ const projects = [
     github: "https://github.com/MahdiJDS/online-exam-ts",
     live: null,
   },
-  
+
 ];
 
 const Projects = () => {
@@ -79,9 +79,9 @@ const Projects = () => {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={3}
+        slidesPerView={2}
         loop={true}
-         coverflowEffect={{
+        coverflowEffect={{
           rotate: 0,
           stretch: 0,
           depth: 100,
@@ -89,10 +89,18 @@ const Projects = () => {
         }}
         pagination={{ clickable: true }}
         navigation={true}
-        modules={[EffectCoverflow, Pagination, Navigation,Autoplay]}
+        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+        breakpoints={{
+          0: {
+            slidesPerView: 1, 
+          },
+          992: {
+            slidesPerView: 3, 
+          },
+        }}
         className="w-full"
       >
-       {projects.map((project, index) => (
+        {projects.map((project, index) => (
           <SwiperSlide
             key={index}
             className="w-full pb-5 flex items-center justify-center"
