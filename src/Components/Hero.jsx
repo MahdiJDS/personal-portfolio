@@ -48,7 +48,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight"
+            className="h-[150px]  text-4xl md:text-6xl md:h-full font-extrabold text-gray-900 dark:text-white leading-tight"
           >
             Hi, I'm <span ref={typeRef} className="text-blue-600 dark:text-blue-400"></span> 👋
           </motion.h1>
