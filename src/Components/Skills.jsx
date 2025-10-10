@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaGitAlt } from "react-icons/fa";
-import { SiJavascript, SiTailwindcss, SiBootstrap } from "react-icons/si";
+import { SiJavascript, SiTailwindcss, SiBootstrap,SiTypescript  } from "react-icons/si";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
@@ -8,11 +8,11 @@ const technicalSkills = [
   { name: "HTML5", icon: <FaHtml5 size={40} className="text-orange-600" />, level: 95 },
   { name: "CSS3", icon: <FaCss3Alt size={40} className="text-blue-600" />, level: 90 },
   { name: "JavaScript", icon: <SiJavascript size={40} className="text-yellow-400" />, level: 85 },
-  { name: "React", icon: <FaReact size={40} className="text-blue-400" />, level: 75 },
+  { name: "React", icon: <FaReact size={40} className="text-blue-400" />, level: 85 },
   { name: "Tailwind", icon: <SiTailwindcss size={40} className="text-cyan-500" />, level: 90 },
-  { name: "Bootstrap", icon: <SiBootstrap size={40} className="text-purple-600" />, level: 90 },
-  { name: "GitHub", icon: <FaGithub size={40} className="text-gray-800 dark:text-white" />, level: 75 },
-  { name: "Git", icon: <FaGitAlt size={40} className="text-red-500" />, level: 70 },
+  { name: "Bootstrap", icon: <SiBootstrap size={40} className="text-purple-600" />, level: 85 },
+  { name: "TypeScript", icon: <SiTypescript size={40} className="text-gray-800 dark:text-white" />, level: 80 },
+  { name: "Git", icon: <FaGitAlt size={40} className="text-red-500" />, level: 85 },
 ];
 
 const softSkills = [

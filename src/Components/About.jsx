@@ -40,7 +40,7 @@ const About = () => {
 
         <p className="mb-6 leading-relaxed max-w-xl">
           My main skills include
-          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> JavaScript</span>, <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Tailwind CSS</span>, and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Git</span> , and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">React js</span>. I am constantly learning and
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> JavaScript</span> , <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> TypeScript</span> , <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Tailwind CSS</span>, and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Git</span> , and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">React</span>. I am constantly learning and
           adapting to new tools and frameworks to improve my craft.
         </p>
 

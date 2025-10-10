@@ -60,7 +60,6 @@ const Contact = () => {
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
 
-
             toast.dismiss();
             toast.success("Message sent successfully!");
             reset();
