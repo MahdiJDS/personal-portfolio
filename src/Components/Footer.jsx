@@ -1,10 +1,10 @@
-import { FaTelegram , FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaTelegram, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-8">
       <div className="w-full mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-        
+
         {/* بخش معرفی مختصر */}
         <div className="text-center md:text-left">
           <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Mahdi Jahed</h3>
@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
 
         <div className="flex space-x-6 text-2xl">
-            <a
+          <a
             href="https://t.me/Eng_IT_FrontD"
             target="_blank"
             rel="noopener noreferrer"
@@ -33,13 +33,13 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="mailto:mahdijahed56@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=mahdijahed56@gmail.com"
+            target="_blank"
             aria-label="Email"
             className="hover:text-red-600 dark:hover:text-red-400 transition"
           >
             <FaEnvelope />
           </a>
-        
         </div>
 
       </div>
