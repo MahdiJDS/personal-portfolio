@@ -16,7 +16,7 @@ const projects = [
     title: "🌐 Translator App",
     description:
       "A sleek, modern, and lightweight text translation app built with vanilla JavaScript, using the Google Translate API via RapidAPI.",
-    imageUrl: "/img/Screenshot Translate.png", // باید تو public/img باشه
+    imageUrl: "/img/Screenshot Translate.png",
     github: "https://github.com/MahdiJDS/translator-App",
     live: null,
   },
@@ -28,10 +28,10 @@ const projects = [
     live: "https://mahdijds.github.io/plant-landing-page/",
   },
   {
-    title: "To-Do App",
+    title: "taskforge App",
     description: "A task manager app with React hooks and localStorage support.",
-    imageUrl: "/img/Screenshot ToList.png",
-    github: "https://github.com/MahdiJDS/to-do-list-React",
+    imageUrl: "/img/Screenshot-ToList2.png",
+    github: "https://github.com/MahdiJDS/taskforge",
     live: null,
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     live: null,
   },
   {
-    title: "restaurant-app",
+    title: "Memory-game",
     description: "A modern, responsive, and fun Memory Matching Game built with React and styled using Tailwind CSS.Flip the cards, match the pairs, and test your brain! 🧩",
     imageUrl: "img/Screenshot memory-game.png",
     github: "https://github.com/MahdiJDS/Memory-game-React",
@@ -53,6 +53,20 @@ const projects = [
     description: "A simple yet powerful online examination platform built with TypeScript, TailwindCSS, and Vanilla JS.",
     imageUrl: "img/Screenshot Exam.png",
     github: "https://github.com/MahdiJDS/online-exam-ts",
+    live: null,
+  },
+  {
+    title: "MotionDrive",
+    description: "An interactive React project where cars come alive .Click a car — watch it drive into your screen. Built with React, Tailwind, and GSAP",
+    imageUrl: "img/Screenshot-car_gsap.png",
+    github: "https://github.com/MahdiJDS/MotionDrive",
+    live: null,
+  },
+  {
+    title: "Next-Shop",
+    description: "Next-Shop is not just an online shop—it's a fully interactive, animated built with Next.js, React, TypeScript, and Tailwind CSS. Every click, scroll, and interaction is designed to delight the user.",
+    imageUrl: "img/Screenshot-Nextshop.png",
+    github: "https://github.com/MahdiJDS/Next-Shop",
     live: null,
   },
 
@@ -114,7 +128,7 @@ const Projects = () => {
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-56 object-cover"
+                className="h-64 object-fill"
               />
               <div className="p-5 flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold mb-2 text-white">
