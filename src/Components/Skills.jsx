@@ -1,19 +1,61 @@
 import React from "react";
-import { FaHtml5, FaCss3Alt, FaReact, FaGithub, FaGitAlt } from "react-icons/fa";
-import { SiJavascript, SiTailwindcss, SiBootstrap,SiTypescript  } from "react-icons/si";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaGithub,
+  FaGitAlt,
+  FaNode,
+  FaCheckCircle,
+  FaNetworkWired, 
+} from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTailwindcss,
+  SiBootstrap,
+  SiTypescript,
+  SiRedux,
+  SiFramer ,
+  SiNextdotjs,
+  SiReactquery,
+  SiReacthookform   
+} from "react-icons/si";
+
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
 const technicalSkills = [
   { name: "HTML5", icon: <FaHtml5 size={40} className="text-orange-600" />, level: 95 },
   { name: "CSS3", icon: <FaCss3Alt size={40} className="text-blue-600" />, level: 90 },
-  { name: "JavaScript", icon: <SiJavascript size={40} className="text-yellow-400" />, level: 85 },
-  { name: "React", icon: <FaReact size={40} className="text-blue-400" />, level: 85 },
-  { name: "Tailwind", icon: <SiTailwindcss size={40} className="text-cyan-500" />, level: 90 },
+  { name: "JavaScript (ES6+)", icon: <SiJavascript size={40} className="text-yellow-400" />, level: 85 },
+
+  // Front-end Core
+  { name: "React.js", icon: <FaReact size={40} className="text-blue-400" />, level: 85 },
+  { name: "React Router", icon: <FaReact size={40} className="text-red-500" />, level: 80 },
+  { name: "Redux Toolkit", icon: <SiRedux size={40} className="text-purple-500" />, level: 80 },
+  { name: "Next.js", icon: <SiNextdotjs  size={40} className="text-black" />, level: 80 },
+  { name: "React Query", icon: <SiReactquery   size={40} className="text-blue-400" />, level: 70 },
+
+
+  // UI Tools
+  { name: "Tailwind CSS", icon: <SiTailwindcss size={40} className="text-cyan-500" />, level: 90 },
   { name: "Bootstrap", icon: <SiBootstrap size={40} className="text-purple-600" />, level: 85 },
-  { name: "TypeScript", icon: <SiTypescript size={40} className="text-gray-800 dark:text-white" />, level: 80 },
-  { name: "Git", icon: <FaGitAlt size={40} className="text-red-500" />, level: 85 },
+  { name: "Framer Motion", icon: <SiFramer   size={40} className="text-purple-600" />, level: 85 },
+
+  // TypeScript
+  { name: "TypeScript", icon: <SiTypescript size={40} className="text-blue-600" />, level: 85 },
+
+ 
+
+  // Forms & Validation
+  { name: "React Hook Form", icon: <SiReacthookform  size={40} className="text-blue-400" />, level: 85 },
+  { name: "Yup Validation", icon: <FaCheckCircle size={40} className="text-green-600" />, level: 80 },
+
+  // Tools
+  { name: "Git & GitHub", icon: <FaGitAlt size={40} className="text-red-500" />, level: 85 },
+  { name: "REST APIs / Fetch / Axios", icon: <FaNetworkWired size={40} className="text-gray-600" />, level: 80 },
 ];
+
 
 const softSkills = [
   { label: "Perseverance and motivation", desc: "ادامه مسیر حتی در شرایط سخت و پرچالش" },
