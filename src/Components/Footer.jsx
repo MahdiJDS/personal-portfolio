@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="text-center md:text-left">
           <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Mahdi Jahed</h3>
           <p className="text-sm max-w-xs">
-            Passionate Front-End Developer creating modern, responsive websites with React , Next and Tailwind CSS.
+            Passionate Front-End Developer creating modern, responsive websites with React , Next and Tailwind.
           </p>
         </div>
 
