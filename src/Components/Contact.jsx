@@ -27,9 +27,7 @@ const Contact = () => {
         mode: "onChange",
 
     });
-    // useEffect(() => {
-    //    localStorage.removeItem('DataC')
-    // }, []);
+    
 
     useEffect(() => {
         const stored = localStorage.getItem("DataC");
