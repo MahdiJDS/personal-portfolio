@@ -34,7 +34,7 @@ const Hero = () => {
 
     typeWord();
 
-    return () => clearTimeout(timeoutId.current); // جلوگیری از اجرای چندباره
+    return () => clearTimeout(timeoutId.current); 
   }, []);
 
   return (
@@ -59,8 +59,8 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl"
           >
-            A passionate Front-End Developer specializing in{" "}
-            <strong>React.js</strong> & modern web design.
+            Front-End Developer specializing in{" "}
+            <strong>React.js</strong> , <strong>Next.js</strong>, reusable components, and modern UI/UX-driven development.
           </motion.p>
 
           <motion.div
