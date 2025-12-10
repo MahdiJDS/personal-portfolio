@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useTheme } from "../Context/ThemeContext";
 
-const navItems = ["Home", "About", "Projects", "Contact"];
+const navItems = ["Home", "About", "Projects","Skills", "Contact"];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
