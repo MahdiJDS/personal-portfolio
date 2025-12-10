@@ -31,9 +31,9 @@ const technicalSkills = [
 
   // Front-end Core
   { name: "React.js", icon: <FaReact size={40} className="text-blue-400" />, level: 85 },
-  { name: "React Router", icon: <FaReact size={40} className="text-red-500" />, level: 80 },
-  { name: "Redux Toolkit", icon: <SiRedux size={40} className="text-purple-500" />, level: 80 },
-  { name: "Next.js", icon: <SiNextdotjs  size={40} className="text-black" />, level: 80 },
+  { name: "React Router", icon: <FaReact size={40} className="text-red-500" />, level: 85 },
+  { name: "Redux Toolkit", icon: <SiRedux size={40} className="text-purple-500" />, level: 85 },
+  { name: "Next.js", icon: <SiNextdotjs  size={40} className="text-black" />, level: 85 },
   { name: "React Query", icon: <SiReactquery   size={40} className="text-blue-400" />, level: 70 },
 
 
@@ -72,7 +72,7 @@ const softSkills = [
 
 const Skills = () => {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-white via-gray-100 to-white dark:from-[#0a192f] dark:to-[#0a192f] py-16 px-6 md:px-20">
+    <section id="skills" className="w-full min-h-screen bg-gradient-to-br from-white via-gray-100 to-white dark:from-[#0a192f] dark:to-[#0a192f] py-16 px-6 md:px-20">
       <div>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white border-b-4 border-pink-600 inline-block mb-12">
           Skills
