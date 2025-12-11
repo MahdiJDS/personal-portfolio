@@ -129,6 +129,7 @@ const Projects = () => {
                 src={project.imageUrl}
                 alt={project.title}
                 className="h-64 object-fill"
+                loading="lazy"
               />
               <div className="p-5 flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold mb-2 text-white">
