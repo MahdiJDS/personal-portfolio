@@ -92,6 +92,7 @@ const Hero = () => {
             src="img/smiling-redhaired-boy-illustration.png"
             alt="personal-img"
             className="rounded-full md:h-[38rem] object-cover dark:border-blue-400"
+            loading="lazy"
           />
         </div>
       </div>
