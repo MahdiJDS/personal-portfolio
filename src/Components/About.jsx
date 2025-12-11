@@ -18,6 +18,7 @@ const About = () => {
           src="/img/smiling-redhaired-boy-illustration.png"
           alt="Mahdi Jahed"
           className="rounded-full w-48 h-48 object-cover shadow-xl border-4 border-blue-500 dark:border-blue-400"
+          loading="lazy"
         />
       </motion.div>
 
