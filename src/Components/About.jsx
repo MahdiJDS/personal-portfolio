@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaTelegram , FaGithub } from "react-icons/fa";
+import { FaTelegram, FaGithub } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -17,7 +17,7 @@ const About = () => {
         <img
           src="/img/smiling-redhaired-boy-illustration.png"
           alt="Mahdi Jahed"
-          className="rounded-full w-48 h-48 object-cover shadow-xl border-4 border-blue-500 dark:border-blue-400"
+          className="rounded-full w-56  object-cover shadow-xl border-4 border-blue-500 dark:border-blue-400"
           loading="lazy"
         />
       </motion.div>
@@ -34,19 +34,28 @@ const About = () => {
         </h2>
 
         <p className="mb-6 leading-relaxed max-w-xl">
-          I'm <span className="font-semibold text-blue-600 dark:text-blue-400">Mahdi Jahed</span>, a passionate <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Front-End Developer</span> with a strong focus on
-          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> React</span> and modern web technologies. I specialize in crafting clean, efficient, and beautiful user interfaces that provide
-          excellent user experiences.
+          I'm <span className="font-semibold text-blue-600 dark:text-blue-400">Mahdi Jahed</span>, a dedicated
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> Front-End Developer</span> specializing in
+          modern web technologies such as
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> React</span> and
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> Next.js</span>.
+          I focus on crafting clean, fast, and visually appealing user interfaces that deliver great user experiences.
         </p>
 
         <p className="mb-6 leading-relaxed max-w-xl">
-          My main skills include
-          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> JavaScript</span> , <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> TypeScript</span> , <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Tailwind CSS</span>, and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Git</span> , and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">React</span>. I am constantly learning and
-          adapting to new tools and frameworks to improve my craft.
+          My core skills include
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> JavaScript</span>,
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> TypeScript</span>,
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> React</span>,
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> Next.js</span>,
+          <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> Tailwind CSS</span>,
+          and <span className="text-indigo-600 dark:text-indigo-400 font-semibold"> Git</span>.
+          I constantly explore new tools, frameworks, and best practices to improve my craft and stay aligned with industry standards.
         </p>
 
         <p className="mb-8 leading-relaxed max-w-xl">
-          My goal is to grow into a full-stack developer, contribute to impactful projects, and work collaboratively in innovative teams. I value clean code, teamwork, and continuous growth.
+          My long-term goal is to grow into a full-stack developer, contribute to impactful projects,
+          and collaborate with innovative teams. I value clean code, teamwork, and continuous growth.
         </p>
 
         <div className="flex space-x-6 justify-center">
@@ -68,7 +77,7 @@ const About = () => {
           >
             <FaGithub />
           </a>
-          
+
         </div>
       </motion.div>
     </section>
