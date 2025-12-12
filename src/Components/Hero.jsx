@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { FaTelegram, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Hero = () => {
   const typeRef = useRef(null);
@@ -34,7 +35,7 @@ const Hero = () => {
 
     typeWord();
 
-    return () => clearTimeout(timeoutId.current); 
+    return () => clearTimeout(timeoutId.current);
   }, []);
 
   return (
@@ -50,14 +51,14 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="h-[150px]  text-4xl md:text-6xl md:h-full font-extrabold text-gray-900 dark:text-white leading-tight"
           >
-            Hi, I'm <span ref={typeRef} className="text-blue-600 dark:text-blue-400"></span> 👋
+            Hi, I'm <span ref={typeRef} className="text-blue-600 dark:text-blue-400 "></span> 👋
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl"
+            className="mt-6 text-lg md:text-xl text-black/75 dark:text-white/80 max-w-2xl"
           >
             Front-End Developer specializing in{" "}
             <strong>React.js</strong> , <strong>Next.js</strong>, reusable components, and modern UI/UX-driven development.
@@ -83,6 +84,8 @@ const Hero = () => {
             </a>
           </motion.div>
         </div>
+
+
 
         <div className="flex w-1/2 mt-20 mb-10">
           <motion.img
