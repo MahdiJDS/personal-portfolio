@@ -58,17 +58,18 @@ const technicalSkills = [
 
 
 const softSkills = [
-  { label: "Perseverance and motivation", desc: "ادامه مسیر حتی در شرایط سخت و پرچالش" },
-  { label: "Committed and responsible", desc: "متعهد به کار و حرفه" },
-  { label: "Problem Solving", desc: "توانایی تحلیل و حل مؤثر مشکلات پروژه‌ها" },
-  { label: "Team Collaboration", desc: "همکاری مؤثر در تیم با ابزارهایی مثل Git و GitHub" },
-  { label: "Self-Learning & Initiative", desc: "قدرت خودآموزی و یادگیری مستمر تکنولوژی‌های جدید" },
-  { label: "Adaptability", desc: "توانایی سازگاری با شرایط و نیازهای مختلف پروژه" },
-  { label: "Time Management", desc: "تمرکز بالا و اولویت‌بندی درست وظایف" },
-  { label: "Communication", desc: "مهارت در بیان مفاهیم فنی و ارتباط مؤثر" },
-  { label: "Creativity & Attention to Detail", desc: "توجه به جزئیات و طراحی رابط کاربری زیبا" },
-  { label: "Growth Mindset", desc: "پذیرای بازخورد و پیگیر رشد و پیشرفت فردی" },
+  { label: "Perseverance & Motivation", desc: "Continuing the journey even in challenging situations" },
+  { label: "Committed & Responsible", desc: "Dedicated to work and professional duties" },
+  { label: "Problem Solving", desc: "Ability to analyze and effectively solve project issues" },
+  { label: "Team Collaboration", desc: "Working effectively within a team using tools like Git and GitHub" },
+  { label: "Self-Learning & Initiative", desc: "Strong self-learning ability and continuous learning of new technologies" },
+  { label: "Adaptability", desc: "Ability to adjust to different project needs and environments" },
+  { label: "Time Management", desc: "High focus and proper task prioritization" },
+  { label: "Communication", desc: "Clear explanation of technical concepts and effective communication" },
+  { label: "Creativity & Attention to Detail", desc: "Focusing on details and designing beautiful user interfaces" },
+  { label: "Growth Mindset", desc: "Open to feedback and committed to personal improvement" },
 ];
+
 
 const Skills = () => {
   return (
