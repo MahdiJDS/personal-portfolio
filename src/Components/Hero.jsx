@@ -51,7 +51,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="h-[150px]  text-4xl md:text-6xl md:h-full font-extrabold text-gray-900 dark:text-white leading-tight"
           >
-            Hi, I'm <span ref={typeRef} className="text-blue-600 dark:text-blue-400 "></span> 👋
+            Hi, I'm <span ref={typeRef} className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent "></span> 👋
           </motion.h1>
 
           <motion.p
