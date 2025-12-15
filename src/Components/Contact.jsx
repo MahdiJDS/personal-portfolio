@@ -1,208 +1,251 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import toast, { Toaster } from 'react-hot-toast';
+import { motion } from "framer-motion";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaPhone,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
-const schema = yup.object().shape({
-    name: yup.string().required('Name is required'),
-    email: yup.string().email('Email is invalid').required('Email is required'),
-    message: yup.string().min(10, 'It should be 10 characters.').required('Message is required'),
+// ================= VALIDATION =================
+const schema = yup.object({
+  name: yup.string().required(),
+  email: yup.string().email().required(),
+  message: yup.string().min(10).required(),
 });
 
+// ================= DATA =================
+const CONTACTS = [
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    value: "mahdijahed56@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=mahdijahed56@email.com",
+  },
+  {
+    icon: FaGithub,
+    label: "GitHub",
+    value: "github.com/MahdiJDS",
+    href: "https://github.com/MahdiJDS",
+  },
+  {
+    icon: FaPhone,
+    label: "Phone",
+    value: "+98 939 291 3194",
+    href: "tel:+989392913194",
+  },
+  {
+    icon: FaMapMarkerAlt,
+    label: "Location",
+    value: "IRAN · Urmia",
+  },
+];
 
+// ================= COMPONENT =================
+export default function Contact() {
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm({ resolver: yupResolver(schema) });
 
-const Contact = () => {
-    const [dataAll, setDataAll] = useState([])
+  const onSubmit = async (data) => {
+    toast.loading("Sending...");
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        data,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      toast.dismiss();
+      toast.success("Message sent");
+      reset();
+    } catch {
+      toast.dismiss();
+      toast.error("Failed to send");
+    }
+  };
 
-    const {
-        control,
-        handleSubmit,
-        formState: { errors },
-        reset,
-    } = useForm({
-        resolver: yupResolver(schema),
-        mode: "onChange",
+  return (
+    <section
+      id="contact"
+      className="relative bg-gray-50 text-gray-900 dark:bg-[#0a0d14] dark:text-white transition-colors"
+    >
+      <Toaster position="top-center" />
 
-    });
-    
-
-    useEffect(() => {
-        const stored = localStorage.getItem("DataC");
-        if (stored) {
-            setDataAll(JSON.parse(stored));
-            console.log(dataAll)
-        }
-    }, []);
-
-    useEffect(() => {
-        if (dataAll.length > 0) {
-            localStorage.setItem("DataC", JSON.stringify(dataAll));
-            console.log(dataAll)
-        }
-    }, [dataAll]);
-
-
-
-
-    const onSubmit = async (data) => {
-        toast.loading("Sending...");
-
-        try {
-            await emailjs.send(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                data,
-                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-            );
-
-            toast.dismiss();
-            toast.success("Message sent successfully!");
-            reset();
-        } catch (err) {
-            toast.dismiss();
-            toast.error("Failed to send message.");
-            console.error(err);
-        }
-    };
-
-
-
-    return (
-        <section
-            id="contact"
-            className="w-screen flex justify-center items-center flex-col mx-auto px-8 py-20 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950"
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        {/* HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-14 max-w-xl"
         >
-            <motion.h2
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+          <p className="mb-4 text-xs tracking-[0.3em] text-blue-600 dark:text-blue-400">
+            CONTACT
+          </p>
+
+          <h2 className="text-5xl font-extrabold leading-tight">
+            Let’s build something
+            <span className="block text-blue-600 dark:text-blue-400">
+              that actually matters
+            </span>
+          </h2>
+
+          <p className="mt-6 text-base text-gray-600 dark:text-gray-400">
+            No pressure. If you have an idea, a challenge, or a role — let’s talk.
+          </p>
+        </motion.div>
+
+        {/* GRID */}
+        <div className="grid grid-cols-1 gap-20 lg:grid-cols-12">
+          {/* CONTACT CHANNELS */}
+          <div className="lg:col-span-4 space-y-6">
+            {CONTACTS.map((item, i) => (
+              <motion.a
+                key={i}
+                href={item.href}
+                target="_blank"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-4xl font-extrabold mb-12 text-center text-blue-700 dark:text-blue-400 tracking-wide"
-            >
-                Get In Touch
-            </motion.h2>
-
-            <Toaster />
-
-            <form
-                onSubmit={handleSubmit(onSubmit)} noValidate className="w-[60%] ">
-                <div className="mb-8">
-                    <label htmlFor="name" className="block mb-3 font-semibold text-gray-800 dark:text-gray-300">
-                        Name
-                    </label>
-                    <Controller
-                        name="name"
-                        control={control}
-                        defaultValue=""
-                        render={({ field }) => (
-                            <motion.input
-                                {...field}
-                                initial={{ opacity: 0, x: -120 }}
-                                viewport={{ once: true }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                                id="name"
-                                type="text"
-                                placeholder="Your full name"
-                                className={`w-full p-4 rounded-xl border transition 
-              ${errors.name
-                                        ? "border-red-500 focus:border-red-600 focus:ring-red-300"
-                                        : "border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-300"
-                                    } 
-              bg-white dark:bg-gray-900 text-gray-900 dark:text-white
-              focus:outline-none focus:ring-4`}
-                            />
-                        )}
-                    />
-                    {errors.name && <p className="mt-2 text-red-500 text-sm">{errors.name.message}</p>}
-                </div>
-
-                <div className="mb-8">
-                    <label htmlFor="email" className="block mb-3 font-semibold text-gray-800 dark:text-gray-300">
-                        Email
-                    </label>
-                    <Controller
-                        name="email"
-                        control={control}
-                        defaultValue=""
-                        render={({ field }) => (
-                            <motion.input
-                                {...field}
-                                initial={{ opacity: 0, x: 120 }}
-                                viewport={{ once: true }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, ease: "linear" }}
-                                id="email"
-                                type="email"
-                                placeholder="you@example.com"
-                                className={`w-full p-4 rounded-xl border transition
-              ${errors.email
-                                        ? "border-red-500 focus:border-red-600 focus:ring-red-300"
-                                        : "border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-300"
-                                    }
-              bg-white dark:bg-gray-900 text-gray-900 dark:text-white
-              focus:outline-none focus:ring-4`}
-                            />
-                        )}
-                    />
-                    {errors.email && <p className="mt-2 text-red-500 text-sm">{errors.email.message}</p>}
-                </div>
-
-                <div className="mb-10">
-                    <label htmlFor="message" className="block mb-3 font-semibold text-gray-800 dark:text-gray-300">
-                        Message
-                    </label>
-                    <Controller
-                        name="message"
-                        control={control}
-                        defaultValue=""
-                        render={({ field }) => (
-                            <AnimatePresence>
-                                <motion.textarea
-                                    {...field}
-                                    initial={{ opacity: 0, y: 120 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 120 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.8, ease: "linear" }}
-                                    id="message"
-                                    rows="5"
-                                    placeholder="Write your message here..."
-                                    className={`w-full p-4 rounded-xl border resize-none transition
-    ${errors.message
-                                            ? "border-red-500 focus:border-red-600 focus:ring-red-300"
-                                            : "border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-blue-300"
-                                        }
-    bg-white dark:bg-gray-900 text-gray-900 dark:text-white
-    focus:outline-none focus:ring-4`}
-                                />
-
-
-                            </AnimatePresence>
-                        )}
-                    />
-                    {errors.message && <p className="mt-2 text-red-500 text-sm">{errors.message.message}</p>}
-                </div>
-
-                <motion.button
-                    type="submit"
-                    initial={{ opacity: 0 }}
-                    viewport={{ once: true }}
-                    whileInView={{ opacity: 1 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ delay: 1, duration: 1, ease: "easeOut" }}
-                    className="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold shadow-lg hover:from-indigo-700 hover:to-blue-600 transition"
+                transition={{ delay: i * 0.08 }}
+                className="
+                group flex items-center gap-5 rounded-2xl
+                border border-gray-200 bg-white
+                dark:border-white/10 dark:bg-white/[0.03]
+                p-5 transition hover:border-blue-500/40
+                "
+              >
+                <div
+                  className="
+                  flex h-12 w-12 items-center justify-center rounded-xl
+                  bg-blue-50 text-blue-600
+                  dark:bg-white/10 dark:text-blue-400
+                  "
                 >
-                    Send Message
-                </motion.button>
+                  <item.icon size={18} />
+                </div>
 
-            </form>
-        </section >
-    );
-};
+                <div className="overflow-hidden">
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    {item.label}
+                  </p>
+                  <p className="truncate text-sm font-medium">
+                    {item.value}
+                  </p>
+                </div>
+              </motion.a>
+            ))}
+          </div>
 
-export default Contact;
+          {/* FORM */}
+          <motion.form
+            onSubmit={handleSubmit(onSubmit)}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="
+            lg:col-span-8 space-y-8 rounded-3xl
+            border border-gray-200 bg-white
+            dark:border-white/10 dark:bg-white/[0.03]
+            p-12 transition-colors
+            "
+          >
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <Controller
+                name="name"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <input
+                    {...field}
+                    placeholder="Your name"
+                    className="
+                    w-full rounded-xl
+                    bg-gray-50 text-gray-900
+                    dark:bg-[#0a0d14] dark:text-white
+                    px-5 py-4 text-sm outline-none
+                    ring-1 ring-gray-200 dark:ring-white/10
+                    focus:ring-blue-500 transition
+                    "
+                  />
+                )}
+              />
+
+              <Controller
+                name="email"
+                control={control}
+                defaultValue=""
+                render={({ field }) => (
+                  <input
+                    {...field}
+                    type="email"
+                    placeholder="Your email"
+                    className="
+                    w-full rounded-xl
+                    bg-gray-50 text-gray-900
+                    dark:bg-[#0a0d14] dark:text-white
+                    px-5 py-4 text-sm outline-none
+                    ring-1 ring-gray-200 dark:ring-white/10
+                    focus:ring-blue-500 transition
+                    "
+                  />
+                )}
+              />
+            </div>
+
+            <Controller
+              name="message"
+              control={control}
+              defaultValue=""
+              render={({ field }) => (
+                <textarea
+                  {...field}
+                  rows={6}
+                  placeholder="Tell me briefly what you’re working on"
+                  className="
+                  w-full resize-none rounded-xl
+                  bg-gray-50 text-gray-900
+                  dark:bg-[#0a0d14] dark:text-white
+                  px-5 py-4 text-sm outline-none
+                  ring-1 ring-gray-200 dark:ring-white/10
+                  focus:ring-blue-500 transition
+                  "
+                />
+              )}
+            />
+
+            <div className="flex items-center justify-between">
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                I usually reply within 24 hours.
+              </p>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="
+                rounded-xl bg-blue-600 px-8 py-4
+                text-sm font-semibold text-white
+                transition hover:bg-blue-700
+                disabled:opacity-60
+                "
+              >
+                {isSubmitting ? "Sending…" : "Send message"}
+              </button>
+            </div>
+          </motion.form>
+        </div>
+      </div>
+    </section>
+  );
+}
+    
