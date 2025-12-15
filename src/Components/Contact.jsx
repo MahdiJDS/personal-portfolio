@@ -11,14 +11,12 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
-// ================= VALIDATION =================
 const schema = yup.object({
   name: yup.string().required(),
   email: yup.string().email().required(),
   message: yup.string().min(10).required(),
 });
 
-// ================= DATA =================
 const CONTACTS = [
   {
     icon: FaEnvelope,
@@ -35,17 +33,16 @@ const CONTACTS = [
   {
     icon: FaPhone,
     label: "Phone",
-    value: "+98 939 291 3194",
+    value: "+98 992 274 9680",
     href: "tel:+989392913194",
   },
   {
     icon: FaMapMarkerAlt,
     label: "Location",
-    value: "IRAN · Urmia",
+    value: "IRAN  -Tabriz",
   },
 ];
 
-// ================= COMPONENT =================
 export default function Contact() {
   const {
     control,
@@ -75,24 +72,24 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-gray-50 text-gray-900 dark:bg-[#0a0d14] dark:text-white transition-colors"
+      className="relative h-screen bg-gray-50 text-gray-900 dark:bg-[#0a0d14] dark:text-white transition-colors"
     >
       <Toaster position="top-center" />
 
-      <div className="mx-auto max-w-7xl px-6 py-20">
+      <div className="mx-auto max-w-7xl px-6 py-10">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-14 max-w-xl"
+          className="mb-8 max-w-xl"
         >
           <p className="mb-4 text-xs tracking-[0.3em] text-blue-600 dark:text-blue-400">
             CONTACT
           </p>
 
-          <h2 className="text-5xl font-extrabold leading-tight">
+          <h2 className="text-4xl font-extrabold leading-tight">
             Let’s build something
             <span className="block text-blue-600 dark:text-blue-400">
               that actually matters
