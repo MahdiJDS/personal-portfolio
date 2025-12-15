@@ -72,13 +72,13 @@ const Hero = () => {
           >
             <a
               href="#projects"
-              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-800 text-white font-bold shadow-lg hover:from-indigo-700 hover:to-blue-600 transition rounded-xl hover:-translate-y-1 duration-300"
+              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold shadow-lg hover:from-indigo-700 hover:to-blue-600 transition rounded-xl hover:-translate-y-1 duration-300"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 bg-gradient-to-r to-blue-600 from-indigo-900 text-white font-bold shadow-lg hover:to-indigo-900 hover:from-blue-600 transition-all rounded-xl hover:-translate-y-1 duration-300"
+              className="px-6 py-3 bg-gradient-to-r to-blue-600 from-indigo-700 text-white font-bold shadow-lg hover:to-indigo-700 hover:from-blue-600 transition-all rounded-xl hover:-translate-y-1 duration-300"
             >
               Contact Us
             </a>
