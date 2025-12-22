@@ -76,8 +76,12 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-screen h-full flex flex-col items-center mx-auto px-6 py-20 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950"
+      className="w-screen h-full flex flex-col items-center mx-auto
+             px-6 py-10 
+             bg-gradient-to-b from-white to-gray-100
+             dark:from-gray-900 dark:to-gray-950"
     >
+
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -106,10 +110,10 @@ const Projects = () => {
         modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
         breakpoints={{
           0: {
-            slidesPerView: 1, 
+            slidesPerView: 1,
           },
           992: {
-            slidesPerView: 3, 
+            slidesPerView: 3,
           },
         }}
         className="w-full"
