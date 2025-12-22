@@ -76,7 +76,7 @@ export default function Contact() {
     >
       <Toaster position="top-center" />
 
-      <div className="mx-auto max-w-7xl px-6 pb-10">
+      <div className="mx-auto max-w-7xl px-6 pt-0 pb-10 md:pt-10">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
