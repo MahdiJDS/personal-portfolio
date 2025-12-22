@@ -121,7 +121,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <SwiperSlide
             key={index}
-            className="w-full pb-5 flex items-center justify-center"
+            className="w-full pb-10 flex items-center justify-center"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -140,7 +140,9 @@ const Projects = () => {
                   {project.title}
                 </h3>
                 <p className="text-gray-300 text-sm mb-4 flex-grow">
-                  {project.description}
+                  {project.description.length > 80
+                    ? project.description.slice(0, 80) + "..."
+                    : project.description}
                 </p>
 
                 <div className="flex gap-4 mt-auto">
