@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { FaTelegram, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Hero = () => {
   const typeRef = useRef(null);
@@ -41,9 +40,9 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-screen flex flex-col justify-center items-center text-center p-4 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950"
+      className="text-center p-4 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-950"
     >
-      <div className="flex flex-col-reverse w-screen justify-between items-center pl-10 md:flex-row">
+      <div className="flex flex-col-reverse min-w-screen justify-between items-center md:flex-row">
         <div className="flex flex-col w-1/2 items-center">
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
