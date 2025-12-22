@@ -20,3 +20,15 @@ section div {
     animation: apper both;
     animation-timeline: view(85% 0%);
 }
+
+:root {
+    --swiper-theme-color: #1d4ed8;
+    --swiper-pagination-bullet-inactive-color: #999;
+    --swiper-pagination-bullet-inactive-opacity: 0.7;
+}
+
+.dark {
+    --swiper-theme-color: #38bdf8;
+    --swiper-pagination-bullet-inactive-color: #555;
+    --swiper-pagination-bullet-inactive-opacity: 0.7;
+}
