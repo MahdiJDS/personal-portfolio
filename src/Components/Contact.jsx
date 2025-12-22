@@ -72,11 +72,11 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative h-screen bg-gray-50 text-gray-900 dark:bg-[#0a0d14] dark:text-white transition-colors"
+      className="relative min-h-screen bg-gray-50 text-gray-900 dark:bg-[#0a0d14] dark:text-white transition-colors"
     >
       <Toaster position="top-center" />
 
-      <div className="mx-auto max-w-7xl px-6 py-10">
+      <div className="mx-auto max-w-7xl px-6 pb-10">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ export default function Contact() {
             p-12 transition-colors
             "
           >
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <Controller
                 name="name"
                 control={control}
@@ -230,10 +230,11 @@ export default function Contact() {
                 type="submit"
                 disabled={isSubmitting}
                 className="
-                rounded-xl bg-blue-600 px-8 py-4
+                rounded-xl bg-blue-600 px-4 py-2
                 text-sm font-semibold text-white
                 transition hover:bg-blue-700
                 disabled:opacity-60
+                md:px-8 md:py-4
                 "
               >
                 {isSubmitting ? "Sending…" : "Send message"}
