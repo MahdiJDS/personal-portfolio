@@ -33,8 +33,8 @@ const CONTACTS = [
   {
     icon: FaPhone,
     label: "Phone",
-    value: "+98 992 274 9680",
-    href: "tel:+989392913194",
+    value: "+98 923 170 2132",
+    href: "tel:+989231702132",
   },
   {
     icon: FaMapMarkerAlt,
