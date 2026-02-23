@@ -58,9 +58,10 @@ const CONTACTS = [
 export default function Contact() {
   const {
     control,
+    register,
     handleSubmit,
     reset,
-    formState: { isSubmitting , errors},
+    formState: { isSubmitting, errors },
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = async (data) => {
@@ -163,32 +164,37 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="
-            lg:col-span-8 space-y-8 rounded-3xl
-            border border-gray-200 bg-white
-            dark:border-white/10 dark:bg-white/[0.03]
-            p-12 transition-colors
-            "
+    lg:col-span-8 space-y-8 rounded-3xl
+    border border-gray-200 bg-white
+    dark:border-white/10 dark:bg-white/[0.03]
+    p-12 transition-colors
+  "
           >
+
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <Controller
-                name="name"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    placeholder="Your name"
-                    className="
-                    w-full rounded-xl
-                    bg-gray-50 text-gray-900
-                    dark:bg-[#0a0d14] dark:text-white
-                    px-5 py-4 text-sm outline-none
-                    ring-1 ring-gray-200 dark:ring-white/10
-                    focus:ring-blue-500 transition
-                    "
-                  />
+              {/* NAME */}
+              <div>
+                <input
+                  {...register("name")}
+                  placeholder="Your name"
+                  aria-invalid={!!errors.name}
+                  className={`
+        w-full rounded-xl
+        bg-gray-50 text-gray-900
+        dark:bg-[#0a0d14] dark:text-white
+        px-5 py-4 text-sm outline-none
+        ring-1 transition
+        focus:ring-blue-500
+        ${errors.name ? "ring-red-500" : "ring-gray-200 dark:ring-white/10"}
+      `}
+                />
+
+                {errors.name && (
+                  <p className="mt-1 text-xs text-red-500">
+                    {errors.name.message}
+                  </p>
                 )}
-              />
+              </div>
 
               <Controller
                 name="email"
@@ -242,19 +248,21 @@ export default function Contact() {
                 type="submit"
                 disabled={isSubmitting}
                 className="
-                rounded-xl bg-blue-600 px-4 py-2
-                text-sm font-semibold text-white
-                transition hover:bg-blue-700
-                disabled:opacity-60
-                md:px-8 md:py-4
-                "
+        rounded-xl bg-blue-600 px-4 py-2
+        text-sm font-semibold text-white
+        transition hover:bg-blue-700
+        disabled:opacity-60
+        md:px-8 md:py-4
+      "
               >
                 {isSubmitting ? "Sending…" : "Send message"}
               </button>
+
             </div>
+
           </motion.form>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }
