@@ -223,26 +223,29 @@ export default function Contact() {
 
             </div>
 
-            <Controller
-              name="message"
-              control={control}
-              defaultValue=""
-              render={({ field }) => (
-                <textarea
-                  {...field}
-                  rows={6}
-                  placeholder="Tell me briefly what you’re working on"
-                  className="
-                  w-full resize-none rounded-xl
-                  bg-gray-50 text-gray-900
-                  dark:bg-[#0a0d14] dark:text-white
-                  px-5 py-4 text-sm outline-none
-                  ring-1 ring-gray-200 dark:ring-white/10
-                  focus:ring-blue-500 transition
-                  "
-                />
+            <div>
+              <textarea
+                {...register("message")}
+                rows={6}
+                placeholder="Tell me briefly what you’re working on"
+                aria-invalid={!!errors.message}
+                className={`
+        w-full resize-none rounded-xl
+        bg-gray-50 text-gray-900
+        dark:bg-[#0a0d14] dark:text-white
+        px-5 py-4 text-sm outline-none
+        ring-1 transition
+        focus:ring-blue-500
+        ${errors.message ? "ring-red-500" : "ring-gray-200 dark:ring-white/10"}
+      `}
+              />
+
+              {errors.message && (
+                <p className="mt-1 text-xs text-red-500">
+                  {errors.message.message}
+                </p>
               )}
-            />
+            </div>
 
             <div className="flex items-center justify-between">
               <p className="text-xs text-gray-500 dark:text-gray-400">
