@@ -12,9 +12,21 @@ import {
 } from "react-icons/fa";
 
 const schema = yup.object({
-  name: yup.string().required(),
-  email: yup.string().email().required(),
-  message: yup.string().min(10).required(),
+  name: yup
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .required("Name is required"),
+
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .required("Email is required"),
+
+  message: yup
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(500, "Message is too long")
+    .required("Message is required"),
 });
 
 const CONTACTS = [
@@ -246,4 +258,3 @@ export default function Contact() {
     </section>
   );
 }
-    
