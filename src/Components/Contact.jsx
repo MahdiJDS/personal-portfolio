@@ -60,7 +60,7 @@ export default function Contact() {
     control,
     handleSubmit,
     reset,
-    formState: { isSubmitting },
+    formState: { isSubmitting , errors},
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = async (data) => {
