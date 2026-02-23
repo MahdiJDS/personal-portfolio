@@ -196,26 +196,31 @@ export default function Contact() {
                 )}
               </div>
 
-              <Controller
-                name="email"
-                control={control}
-                defaultValue=""
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="email"
-                    placeholder="Your email"
-                    className="
-                    w-full rounded-xl
-                    bg-gray-50 text-gray-900
-                    dark:bg-[#0a0d14] dark:text-white
-                    px-5 py-4 text-sm outline-none
-                    ring-1 ring-gray-200 dark:ring-white/10
-                    focus:ring-blue-500 transition
-                    "
-                  />
+              {/* EMAIL */}
+              <div>
+                <input
+                  {...register("email")}
+                  type="email"
+                  placeholder="Your email"
+                  aria-invalid={!!errors.email}
+                  className={`
+        w-full rounded-xl
+        bg-gray-50 text-gray-900
+        dark:bg-[#0a0d14] dark:text-white
+        px-5 py-4 text-sm outline-none
+        ring-1 transition
+        focus:ring-blue-500
+        ${errors.email ? "ring-red-500" : "ring-gray-200 dark:ring-white/10"}
+      `}
+                />
+
+                {errors.email && (
+                  <p className="mt-1 text-xs text-red-500">
+                    {errors.email.message}
+                  </p>
                 )}
-              />
+              </div>
+
             </div>
 
             <Controller
