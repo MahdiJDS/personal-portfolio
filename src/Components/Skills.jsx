@@ -4,41 +4,172 @@ import {
   FaCss3Alt,
   FaReact,
   FaGitAlt,
-  FaCheckCircle,
   FaNetworkWired,
+  FaNodeJs,
+  FaLayerGroup
 } from "react-icons/fa";
+
 import {
   SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
   SiTailwindcss,
   SiBootstrap,
-  SiTypescript,
-  SiRedux,
   SiFramer,
-  SiNextdotjs,
+  SiRedux,
   SiReactquery,
   SiReacthookform,
+  SiExpress,
+  SiPrisma,
+  SiPostgresql,
+  SiSupabase,
+  SiCloudinary,
+  SiAxios,
+  SiJsonwebtokens,
+  SiZod,
 } from "react-icons/si";
 
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 
 const technicalSkills = [
-  { name: "HTML5", icon: <FaHtml5 size={40} className="text-orange-600" />, level: 95 },
-  { name: "CSS3", icon: <FaCss3Alt size={40} className="text-blue-600" />, level: 90 },
-  { name: "JavaScript (ES6+)", icon: <SiJavascript size={40} className="text-yellow-400" />, level: 85 },
-  { name: "React.js", icon: <FaReact size={40} className="text-blue-400" />, level: 85 },
-  { name: "React Router", icon: <FaReact size={40} className="text-red-500" />, level: 85 },
-  { name: "Redux Toolkit", icon: <SiRedux size={40} className="text-purple-500" />, level: 85 },
-  { name: "Next.js", icon: <SiNextdotjs size={40} className="text-black" />, level: 85 },
-  { name: "React Query", icon: <SiReactquery size={40} className="text-blue-400" />, level: 70 },
-  { name: "Tailwind CSS", icon: <SiTailwindcss size={40} className="text-cyan-500" />, level: 90 },
-  { name: "Bootstrap", icon: <SiBootstrap size={40} className="text-purple-600" />, level: 85 },
-  { name: "Framer Motion", icon: <SiFramer size={40} className="text-purple-600" />, level: 85 },
-  { name: "TypeScript", icon: <SiTypescript size={40} className="text-blue-600" />, level: 85 },
-  { name: "React Hook Form", icon: <SiReacthookform size={40} className="text-blue-400" />, level: 85 },
-  { name: "Yup Validation", icon: <FaCheckCircle size={40} className="text-green-600" />, level: 80 },
-  { name: "Git & GitHub", icon: <FaGitAlt size={40} className="text-red-500" />, level: 85 },
-  { name: "REST APIs / Fetch / Axios", icon: <FaNetworkWired size={40} className="text-gray-600" />, level: 80 },
+  // Frontend
+  {
+    name: "HTML5",
+    icon: <FaHtml5 size={40} className="text-orange-600" />,
+    level: 95,
+  },
+  {
+    name: "CSS3",
+    icon: <FaCss3Alt size={40} className="text-blue-600" />,
+    level: 92,
+  },
+  {
+    name: "JavaScript (ES6+)",
+    icon: <SiJavascript size={40} className="text-yellow-400" />,
+    level: 92,
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript size={40} className="text-blue-600" />,
+    level: 88,
+  },
+  {
+    name: "React.js",
+    icon: <FaReact size={40} className="text-cyan-400" />,
+    level: 90,
+  },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs size={40} className="text-black dark:text-white" />,
+    level: 88,
+  },
+
+  // UI
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss size={40} className="text-cyan-500" />,
+    level: 92,
+  },
+  {
+    name: "Bootstrap",
+    icon: <SiBootstrap size={40} className="text-purple-600" />,
+    level: 85,
+  },
+  {
+    name: "Framer Motion",
+    icon: <SiFramer size={40} className="text-pink-500" />,
+    level: 85,
+  },
+
+  // State Management
+  {
+    name: "Redux Toolkit",
+    icon: <SiRedux size={40} className="text-purple-500" />,
+    level: 80,
+  },
+  {
+    name: "Zustand",
+    icon: <FaLayerGroup size={40} />,
+    level: 85,
+  },
+  {
+    name: "TanStack Query",
+    icon: <SiReactquery size={40} className="text-red-500" />,
+    level: 85,
+  },
+
+  // Forms
+  {
+    name: "React Hook Form",
+    icon: <SiReacthookform size={40} className="text-pink-500" />,
+    level: 90,
+  },
+  {
+    name: "Zod",
+    icon: <SiZod size={40} className="text-blue-600" />,
+    level: 85,
+  },
+
+  // Backend
+  {
+    name: "Node.js",
+    icon: <FaNodeJs size={40} className="text-green-600" />,
+    level: 82,
+  },
+  {
+    name: "Express.js",
+    icon: <SiExpress size={40} />,
+    level: 82,
+  },
+
+  // Database
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql size={40} className="text-blue-700" />,
+    level: 84,
+  },
+  {
+    name: "Prisma ORM",
+    icon: <SiPrisma size={40} />,
+    level: 84,
+  },
+
+  // Cloud
+  {
+    name: "Supabase",
+    icon: <SiSupabase size={40} className="text-green-500" />,
+    level: null,
+  },
+  {
+    name: "Cloudinary",
+    icon: <SiCloudinary size={40} className="text-blue-500" />,
+    level: null,
+  },
+
+  // APIs & Auth
+  {
+    name: "REST APIs",
+    icon: <FaNetworkWired size={40} className="text-slate-600" />,
+    level: 88,
+  },
+  {
+    name: "Axios",
+    icon: <SiAxios size={40} className="text-indigo-500" />,
+    level: 88,
+  },
+  {
+    name: "JWT Authentication",
+    icon: <SiJsonwebtokens size={40} className="text-orange-500" />,
+    level: 80,
+  },
+
+  // Tools
+  {
+    name: "Git & GitHub",
+    icon: <FaGitAlt size={40} className="text-red-500" />,
+    level: 88,
+  },
 ];
 
 const softSkills = [
@@ -76,18 +207,20 @@ const Skills = () => {
                 {skill.icon}
                 <span className="mt-2">{skill.name}</span>
               </div>
-              <Tooltip
-                anchorSelect={`#skill-${index}`}
-                content={`${skill.name}: ${skill.level}%`}
-                place="top"
-                style={{
-                  backgroundColor: "#111",
-                  color: "#fff",
-                  borderRadius: "6px",
-                  padding: "8px 12px",
-                  fontSize: "0.85rem",
-                }}
-              />
+              {skill.level &&
+                <Tooltip
+                  anchorSelect={`#skill-${index}`}
+                  content={`${skill.name}: ${skill.level}%`}
+                  place="top"
+                  style={{
+                    backgroundColor: "#111",
+                    color: "#fff",
+                    borderRadius: "6px",
+                    padding: "8px 12px",
+                    fontSize: "0.85rem",
+                  }}
+                />
+              }
             </div>
           ))}
         </div>
