@@ -79,7 +79,7 @@ const About = () => {
         />
       </motion.div>
 
-    
+
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -96,18 +96,22 @@ const About = () => {
           <span className="font-semibold text-blue-600 dark:text-blue-400">
             Mahdi Jahed
           </span>
-          , a creative{" "}
+          , a{" "}
           <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-            Front-End Developer
-          </span>{" "}
-          focused on building immersive, modern, and interactive web
-          experiences using{" "}
+            Frontend-focused Full-Stack Developer
+          </span>
+          {" "}passionate about building modern, scalable, and interactive web
+          applications using{" "}
           <span className="font-semibold text-indigo-600 dark:text-indigo-400">
             React
-          </span>{" "}
-          and{" "}
+          </span>
+          ,{" "}
           <span className="font-semibold text-indigo-600 dark:text-indigo-400">
             Next.js
+          </span>
+          , and{" "}
+          <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+            TypeScript
           </span>
           .
         </p>
@@ -115,28 +119,20 @@ const About = () => {
         <p className="mb-6 leading-relaxed">
           My core stack includes{" "}
           <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-            JavaScript
+            React, Next.js, Tailwind CSS, Zustand, TanStack Query
           </span>
-          ,{" "}
+          {" "}for building modern frontend architectures, along with{" "}
           <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-            TypeScript
+            Node.js, Express.js, Prisma, and PostgreSQL
           </span>
-          ,{" "}
-          <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-            Tailwind CSS
-          </span>
-          , and{" "}
-          <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-            Git
-          </span>
-          . I enjoy crafting smooth animations, clean architecture, and
-          delightful user experiences.
+          {" "}for developing robust backend systems and data-driven applications.
         </p>
 
         <p className="mb-10 leading-relaxed">
-          My vision is to grow into a full-stack developer, work on meaningful
-          products, and collaborate with teams that care deeply about quality,
-          performance, and innovation.
+          I focus on writing clean, maintainable code, designing reusable components,
+          building efficient APIs, and creating seamless user experiences. My goal is
+          to continue growing as a software engineer by developing scalable products
+          that combine great design with reliable technology.
         </p>
 
         {/* Socials */}
