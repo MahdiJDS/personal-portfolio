@@ -13,6 +13,14 @@ import "swiper/css/effect-coverflow";
 
 const projects = [
   {
+    title: "🏡 RealNest",
+    description:
+      "A production-ready full-stack real estate platform built with Next.js, Express.js, TypeScript, Prisma, PostgreSQL, Supabase, React Query, Zustand, and shadcn/ui.",
+    imageUrl: "/img/Screenshot-RealNest.png",
+    github: "https://github.com/MahdiJDS/real-estate-platform",
+    live: "https://real-estate-platforms.vercel.app/",
+  },
+  {
     title: "🌐 Translator App",
     description:
       "A sleek, modern, and lightweight text translation app built with vanilla JavaScript, using the Google Translate API via RapidAPI.",
