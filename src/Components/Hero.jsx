@@ -59,8 +59,11 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="mt-6 text-lg md:text-xl text-black/75 dark:text-white/80 max-w-2xl"
           >
-            Front-End Developer specializing in{" "}
-            <strong>React.js</strong> , <strong>Next.js</strong>, reusable components, and modern UI/UX-driven development.
+            Frontend-focused Full-Stack Developer specializing in{" "}
+            <strong>React.js</strong>, <strong>Next.js</strong>, and{" "}
+            <strong>TypeScript</strong>. Building scalable web applications with
+            modern UI architectures, efficient state management, robust APIs, and
+            database-driven solutions.
           </motion.p>
 
           <motion.div
