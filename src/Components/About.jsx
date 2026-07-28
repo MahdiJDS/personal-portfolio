@@ -70,7 +70,7 @@ const About = () => {
 
         {/* Avatar Image (3D Tilt) */}
         <motion.img
-          src="/img/smiling-redhaired-boy-illustration.png"
+          src="/img/IMG_About-section.avif"
           alt="Mahdi Jahed"
           loading="lazy"
           // style={{ rotateX, rotateY }}/
