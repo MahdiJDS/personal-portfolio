@@ -94,7 +94,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 1.2 }}
-            src="img/smiling-redhaired-boy-illustration.png"
+            src="img/IMG_Hero-section.avif"
             alt="personal-img"
             className="rounded-full md:h-[38rem] object-cover dark:border-blue-400"
             loading="lazy"
