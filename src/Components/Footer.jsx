@@ -19,19 +19,20 @@ const Footer = () => {
             href="https://t.me/Eng_IT_FrontD"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit Mahdi Jahed on Telegram"
             className="text-blue-500 dark:text-gray-100 hover:text-blue-700 dark:hover:text-gray-300 transition text-3xl"
           >
-            <FaTelegram />
+            <FaTelegram aria-hidden="true" />
           </a>
 
           <a
             href="https://github.com/MahdiJDS"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
+            aria-label="Visit Mahdi Jahed on Github"
             className="hover:text-gray-900 dark:hover:text-gray-100 transition"
           >
-            <FaGithub />
+            <FaGithub aria-hidden="true" />
           </a>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=mahdijahed56@gmail.com"
@@ -45,7 +46,7 @@ const Footer = () => {
 
       </div>
 
-      <div className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+      <div className="mt-8 text-center text-sm text-gray-700 dark:text-gray-300">
         &copy; {new Date().getFullYear()} Mahdi Jahed. All rights reserved.
       </div>
     </footer>
