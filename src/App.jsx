@@ -17,27 +17,27 @@ function App() {
   return (
     <ThemeProvider>
       <Navbar />
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Hero />
+        </Suspense>
 
-       <Suspense fallback={<Loader />}>
-        <Hero />
-      </Suspense>
+        <Suspense fallback={<Loader />}>
+          <About />
+        </Suspense>
 
-      <Suspense fallback={<Loader />}>
-        <About />
-      </Suspense>
+        <Suspense fallback={<Loader />}>
+          <Projects />
+        </Suspense>
 
-      <Suspense fallback={<Loader />}>
-        <Projects />
-      </Suspense>
+        <Suspense fallback={<Loader />}>
+          <Skills />
+        </Suspense>
 
-      <Suspense fallback={<Loader />}>
-        <Skills />
-      </Suspense>
-
-      <Suspense fallback={<Loader />}>
-        <Contact />
-      </Suspense>
-
+        <Suspense fallback={<Loader />}>
+          <Contact />
+        </Suspense>
+      </main>
       <Suspense fallback={<Loader />}>
         <Footer />
       </Suspense>
