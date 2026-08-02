@@ -202,12 +202,23 @@ const Skills = () => {
         <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">🚀 Technical Skills</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center text-gray-800 dark:text-gray-300">
           {technicalSkills.map((skill, index) => (
-            <div key={index} className="flex items-center justify-center cursor-pointer">
-              <div id={`skill-${index}`} className="group flex flex-col items-center justify-center">
-                {skill.icon}
+            <div
+              key={skill.name}
+              className="flex items-center justify-center cursor-pointer"
+            >
+              <div
+                id={`skill-${index}`}
+                className="group flex flex-col items-center justify-center"
+              >
+                {React.cloneElement(skill.icon, {
+                  "aria-hidden": true,
+                  focusable: false,
+                })}
+
                 <span className="mt-2">{skill.name}</span>
               </div>
-              {skill.level &&
+
+              {skill.level && (
                 <Tooltip
                   anchorSelect={`#skill-${index}`}
                   content={`${skill.name}: ${skill.level}%`}
@@ -220,7 +231,7 @@ const Skills = () => {
                     fontSize: "0.85rem",
                   }}
                 />
-              }
+              )}
             </div>
           ))}
         </div>
