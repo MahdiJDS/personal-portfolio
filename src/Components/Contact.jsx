@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import emailjs from "@emailjs/browser";
@@ -51,21 +51,23 @@ const CONTACTS = [
   {
     icon: FaMapMarkerAlt,
     label: "Location",
-    value: "IRAN  -Tabriz",
+    value: "Iran - Tabriz",
   },
 ];
 
 export default function Contact() {
   const {
-    control,
     register,
     handleSubmit,
     reset,
     formState: { isSubmitting, errors },
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   const onSubmit = async (data) => {
-    toast.loading("Sending...");
+    const loading = toast.loading("Sending...");
+
     try {
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -73,30 +75,31 @@ export default function Contact() {
         data,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
-      toast.dismiss();
-      toast.success("Message sent");
+
+      toast.dismiss(loading);
+      toast.success("Message sent successfully!");
       reset();
     } catch {
-      toast.dismiss();
-      toast.error("Failed to send");
+      toast.dismiss(loading);
+      toast.error("Failed to send message.");
     }
   };
 
   return (
     <section
       id="contact"
-      className="relative min-h-screen bg-gray-50 text-gray-900 dark:bg-[#0a0d14] dark:text-white transition-colors"
+      className="relative min-h-screen bg-gray-50 text-gray-900 transition-colors dark:bg-[#0a0d14] dark:text-white"
     >
       <Toaster position="top-center" />
 
-      <div className="mx-auto max-w-7xl px-6 pt-0 pb-10 md:pt-10">
-        {/* HEADER */}
+      <div className="mx-auto max-w-7xl px-6 pb-10 pt-0 md:pt-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-8 max-w-xl"
+          className="mb-10 max-w-xl"
         >
           <p className="mb-4 text-xs tracking-[0.3em] text-blue-600 dark:text-blue-400">
             CONTACT
@@ -110,53 +113,82 @@ export default function Contact() {
           </h2>
 
           <p className="mt-6 text-base text-gray-600 dark:text-gray-400">
-            No pressure. If you have an idea, a challenge, or a role — let’s talk.
+            No pressure. If you have an idea, a challenge, or a role — let’s
+            talk.
           </p>
         </motion.div>
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 gap-20 lg:grid-cols-12">
-          {/* CONTACT CHANNELS */}
-          <div className="lg:col-span-4 space-y-6">
-            {CONTACTS.map((item, i) => (
-              <motion.a
-                key={i}
-                href={item.href}
-                target="_blank"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
+          {/* Left */}
+          <div className="space-y-6 lg:col-span-4">
+            {CONTACTS.map((item, i) => {
+              const content = (
+                <>
+                  <div
+                    className="
+                      flex h-12 w-12 items-center justify-center rounded-xl
+                      bg-blue-50 text-blue-600
+                      dark:bg-white/10 dark:text-blue-400
+                    "
+                  >
+                    <item.icon size={18} />
+                  </div>
+
+                  <div className="overflow-hidden">
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      {item.label}
+                    </p>
+
+                    <p className="truncate text-sm font-medium">
+                      {item.value}
+                    </p>
+                  </div>
+                </>
+              );
+
+              const className = `
                 group flex items-center gap-5 rounded-2xl
                 border border-gray-200 bg-white
+                p-5 transition
+                hover:border-blue-500/40 hover:-translate-y-1
                 dark:border-white/10 dark:bg-white/[0.03]
-                p-5 transition hover:border-blue-500/40
-                "
-              >
-                <div
-                  className="
-                  flex h-12 w-12 items-center justify-center rounded-xl
-                  bg-blue-50 text-blue-600
-                  dark:bg-white/10 dark:text-blue-400
-                  "
-                >
-                  <item.icon size={18} />
-                </div>
+              `;
 
-                <div className="overflow-hidden">
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    {item.label}
-                  </p>
-                  <p className="truncate text-sm font-medium">
-                    {item.value}
-                  </p>
-                </div>
-              </motion.a>
-            ))}
+              const animationProps = {
+                initial: { opacity: 0, x: -20 },
+                whileInView: { opacity: 1, x: 0 },
+                viewport: { once: true },
+                transition: { delay: i * 0.08 },
+              };
+
+              return item.href ? (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    item.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className={className}
+                  {...animationProps}
+                >
+                  {content}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={item.label}
+                  className={className}
+                  {...animationProps}
+                >
+                  {content}
+                </motion.div>
+              );
+            })}
           </div>
 
-          {/* FORM */}
+          {/* Right */}
           <motion.form
             onSubmit={handleSubmit(onSubmit)}
             initial={{ opacity: 0, y: 30 }}
@@ -164,39 +196,42 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="
-    lg:col-span-8 space-y-8 rounded-3xl
-    border border-gray-200 bg-white
-    dark:border-white/10 dark:bg-white/[0.03]
-    p-12 transition-colors
-  "
+              space-y-8 rounded-3xl
+              border border-gray-200 bg-white
+              p-12 transition-colors
+              dark:border-white/10 dark:bg-white/[0.03]
+              lg:col-span-8
+            "
           >
-
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              {/* NAME */}
+              {/* Name */}
               <div>
                 <input
                   {...register("name")}
                   placeholder="Your name"
                   aria-invalid={!!errors.name}
                   className={`
-        w-full rounded-xl
-        bg-gray-50 text-gray-900
-        dark:bg-[#0a0d14] dark:text-white
-        px-5 py-4 text-sm outline-none
-        ring-1 transition
-        focus:ring-blue-500
-        ${errors.name ? "ring-red-500" : "ring-gray-200 dark:ring-white/10"}
-      `}
+                    w-full rounded-xl
+                    bg-gray-50 px-5 py-4 text-sm
+                    text-gray-900 outline-none
+                    ring-1 transition
+                    focus:ring-blue-500
+                    dark:bg-[#0a0d14] dark:text-white
+                    ${errors.name
+                      ? "ring-red-500"
+                      : "ring-gray-200 dark:ring-white/10"
+                    }
+                  `}
                 />
 
                 {errors.name && (
-                  <p className="mt-1 text-xs text-red-500">
+                  <p className="mt-2 text-xs text-red-500">
                     {errors.name.message}
                   </p>
                 )}
               </div>
 
-              {/* EMAIL */}
+              {/* Email */}
               <div>
                 <input
                   {...register("email")}
@@ -204,44 +239,50 @@ export default function Contact() {
                   placeholder="Your email"
                   aria-invalid={!!errors.email}
                   className={`
-        w-full rounded-xl
-        bg-gray-50 text-gray-900
-        dark:bg-[#0a0d14] dark:text-white
-        px-5 py-4 text-sm outline-none
-        ring-1 transition
-        focus:ring-blue-500
-        ${errors.email ? "ring-red-500" : "ring-gray-200 dark:ring-white/10"}
-      `}
+                    w-full rounded-xl
+                    bg-gray-50 px-5 py-4 text-sm
+                    text-gray-900 outline-none
+                    ring-1 transition
+                    focus:ring-blue-500
+                    dark:bg-[#0a0d14] dark:text-white
+                    ${errors.email
+                      ? "ring-red-500"
+                      : "ring-gray-200 dark:ring-white/10"
+                    }
+                  `}
                 />
 
                 {errors.email && (
-                  <p className="mt-1 text-xs text-red-500">
+                  <p className="mt-2 text-xs text-red-500">
                     {errors.email.message}
                   </p>
                 )}
               </div>
-
             </div>
 
+            {/* Message */}
             <div>
               <textarea
                 {...register("message")}
                 rows={6}
-                placeholder="Tell me briefly what you’re working on"
+                placeholder="Tell me briefly what you're working on"
                 aria-invalid={!!errors.message}
                 className={`
-        w-full resize-none rounded-xl
-        bg-gray-50 text-gray-900
-        dark:bg-[#0a0d14] dark:text-white
-        px-5 py-4 text-sm outline-none
-        ring-1 transition
-        focus:ring-blue-500
-        ${errors.message ? "ring-red-500" : "ring-gray-200 dark:ring-white/10"}
-      `}
+                  w-full resize-none rounded-xl
+                  bg-gray-50 px-5 py-4 text-sm
+                  text-gray-900 outline-none
+                  ring-1 transition
+                  focus:ring-blue-500
+                  dark:bg-[#0a0d14] dark:text-white
+                  ${errors.message
+                    ? "ring-red-500"
+                    : "ring-gray-200 dark:ring-white/10"
+                  }
+                `}
               />
 
               {errors.message && (
-                <p className="mt-1 text-xs text-red-500">
+                <p className="mt-2 text-xs text-red-500">
                   {errors.message.message}
                 </p>
               )}
@@ -256,21 +297,21 @@ export default function Contact() {
                 type="submit"
                 disabled={isSubmitting}
                 className="
-        rounded-xl bg-blue-600 px-4 py-2
-        text-sm font-semibold text-white
-        transition hover:bg-blue-700
-        disabled:opacity-60
-        md:px-8 md:py-4
-      "
+                  rounded-xl bg-blue-600
+                  px-6 py-3
+                  text-sm font-semibold text-white
+                  transition
+                  hover:bg-blue-700
+                  disabled:cursor-not-allowed
+                  disabled:opacity-60
+                "
               >
-                {isSubmitting ? "Sending…" : "Send message"}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
-
             </div>
-
           </motion.form>
         </div>
-      </div >
-    </section >
+      </div>
+    </section>
   );
 }
