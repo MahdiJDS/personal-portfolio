@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaTelegram, FaGithub } from "react-icons/fa";
+import { FaTelegram, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -103,17 +103,13 @@ const About = () => {
           "
         >
           <h2
-            className="
-              mb-6
-              text-4xl
-              font-extrabold
-              tracking-wide
-              text-blue-700
-              dark:text-blue-400
-              md:text-5xl
-            "
+            id="about-heading"
+            className="mb-6 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl dark:text-[#E7ECF5]"
           >
-            About Me
+            About{" "}
+            <span className="bg-gradient-to-r from-[#8B7CFA] via-[#7C5CFF] to-[#5EE7C9] bg-clip-text text-transparent">
+              Me
+            </span>
           </h2>
 
           <p className="mb-6 leading-relaxed">
@@ -162,20 +158,13 @@ const About = () => {
           </p>
 
           {/* Social links */}
-          <div className="flex gap-8">
+          <div className="flex gap-4">
             <a
               href="https://t.me/Web_dev_JDS"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
-              className="
-                text-3xl
-                text-blue-600
-                transition-colors
-                hover:text-blue-800
-                dark:text-gray-100
-                dark:hover:text-gray-300
-              "
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-2xl text-slate-700 transition-colors duration-300 hover:border-[#7C5CFF]/60 hover:bg-[#7C5CFF]/10 hover:text-[#6D45FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C5CFF] dark:border-white/15 dark:text-[#E7ECF5] dark:hover:text-[#8B7CFA]"
             >
               <FaTelegram aria-hidden="true" />
             </a>
@@ -185,16 +174,18 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="
-                text-3xl
-                text-gray-900
-                transition-colors
-                hover:text-gray-700
-                dark:text-gray-100
-                dark:hover:text-gray-300
-              "
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-2xl text-slate-700 transition-colors duration-300 hover:border-[#7C5CFF]/60 hover:bg-[#7C5CFF]/10 hover:text-[#6D45FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C5CFF] dark:border-white/15 dark:text-[#E7ECF5] dark:hover:text-[#8B7CFA]"
             >
               <FaGithub aria-hidden="true" />
+            </a>
+
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=mahdijahed56@gmail.com"
+              target="_blank"
+              aria-label="Email"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-2xl text-slate-700 transition-colors duration-300 hover:border-[#7C5CFF]/60 hover:bg-[#7C5CFF]/10 hover:text-[#6D45FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C5CFF] dark:border-white/15 dark:text-[#E7ECF5] dark:hover:text-[#8B7CFA]"
+            >
+              <FaEnvelope />
             </a>
           </div>
         </motion.div>
