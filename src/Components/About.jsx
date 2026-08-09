@@ -143,18 +143,6 @@ const About = () => {
             .
           </p>
 
-          <p className="mb-6 leading-relaxed">
-            My core stack includes{" "}
-            <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-              React, Next.js, Tailwind CSS, Zustand, TanStack Query
-            </span>{" "}
-            for building modern frontend architectures, along with{" "}
-            <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-              Node.js, Express.js, Prisma, and PostgreSQL
-            </span>{" "}
-            for developing robust backend systems and data-driven applications.
-          </p>
-
           <p className="mb-10 leading-relaxed">
             I focus on writing clean, maintainable code, designing reusable
             components, building efficient APIs, and creating seamless user
@@ -162,6 +150,26 @@ const About = () => {
             by developing scalable products that combine great design with
             reliable technology.
           </p>
+         
+          <div className="mb-10 flex justify-center items-center w-full flex-col gap-5">
+            {Object.entries(stack).map(([group, items]) => (
+              <div key={group} className="flex flex-col items-center gap-2.5 sm:items-start sm:text-left">
+                <span className="font-mono text-xs uppercase tracking-wider text-slate-400 dark:text-[#8892A0]">
+                  {group}
+                </span>
+                <ul className="flex flex-wrap justify-center gap-2 sm:justify-start">
+                  {items.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1 font-mono text-xs text-slate-700 dark:border-white/10 dark:bg-white/[0.03] dark:text-[#C7CEDA]"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
 
           {/* Social links */}
           <div className="flex gap-4">
