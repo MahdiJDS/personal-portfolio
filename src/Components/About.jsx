@@ -5,6 +5,7 @@ const About = () => {
   return (
     <section
       id="about"
+      aria-labelledby="about-heading"
       className="
         w-full
         overflow-hidden
@@ -62,7 +63,7 @@ const About = () => {
 
           <img
             src="/img/IMG_About-section.avif"
-            alt="Mahdi Jahed - Front-End Developer"
+            alt="Mahdi Jahed, Frontend-focused Full-Stack Developer"
             width={400}
             height={400}
             loading="lazy"
