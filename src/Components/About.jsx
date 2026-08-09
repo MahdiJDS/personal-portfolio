@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import { FaTelegram, FaGithub, FaEnvelope } from "react-icons/fa";
 
+const stack = {
+  Frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand", "TanStack Query"],
+  Backend: ["Node.js", "Express.js", "Prisma", "PostgreSQL"],
+};
+
 const About = () => {
   return (
     <section
