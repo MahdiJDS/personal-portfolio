@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaTelegram, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaTelegram, FaGithub, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
 
 const stack = {
   Frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand", "TanStack Query"],
@@ -191,6 +191,16 @@ const About = () => {
               className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-2xl text-slate-700 transition-colors duration-300 hover:border-[#7C5CFF]/60 hover:bg-[#7C5CFF]/10 hover:text-[#6D45FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C5CFF] dark:border-white/15 dark:text-[#E7ECF5] dark:hover:text-[#8B7CFA]"
             >
               <FaGithub aria-hidden="true" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/mahdi-jahed-jds"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Linkedin"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-2xl text-slate-700 transition-colors duration-300 hover:border-[#7C5CFF]/60 hover:bg-[#7C5CFF]/10 hover:text-[#6D45FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C5CFF] dark:border-white/15 dark:text-[#E7ECF5] dark:hover:text-[#8B7CFA]"
+            >
+              <FaLinkedinIn aria-hidden="true" />
             </a>
 
             <a
