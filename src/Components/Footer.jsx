@@ -1,4 +1,4 @@
-import { FaTelegram, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaTelegram, FaGithub, FaTwitter, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -34,6 +34,17 @@ const Footer = () => {
           >
             <FaGithub aria-hidden="true" />
           </a>
+
+          <a
+            href="https://www.linkedin.com/in/mahdi-jahed-jds"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Mahdi Jahed on Linkedin"
+            className="hover:text-gray-900 dark:hover:text-gray-100 transition"
+          >
+            <FaLinkedinIn aria-hidden="true" />
+          </a>
+          
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=mahdijahed56@gmail.com"
             target="_blank"
