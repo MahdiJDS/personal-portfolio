@@ -1,64 +1,66 @@
-import { FaTelegram, FaGithub, FaTwitter, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
+import { FaTelegram, FaGithub, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
+
+const socialLinks = [
+  {
+    href: "https://t.me/Eng_IT_FrontD",
+    label: "Visit Mahdi Jahed on Telegram",
+    icon: FaTelegram,
+  },
+  {
+    href: "https://github.com/MahdiJDS",
+    label: "Visit Mahdi Jahed on Github",
+    icon: FaGithub,
+  },
+  {
+    href: "https://www.linkedin.com/in/mahdi-jahed-jds",
+    label: "Visit Mahdi Jahed on LinkedIn",
+    icon: FaLinkedinIn,
+  },
+  {
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=mahdijahed56@gmail.com",
+    label: "Email Mahdi Jahed",
+    icon: FaEnvelope,
+  },
+];
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-8">
-      <div className="w-full mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-
-        {/* بخش معرفی مختصر */}
-        <div className="text-center md:text-left">
-          <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">Mahdi Jahed</h3>
-          <p className="text-sm max-w-xs">
-            Frontend-focused Full-Stack Developer crafting modern web applications with
-            React, Next.js, TypeScript, and scalable technologies.
+    <footer className="border-t border-slate-200 bg-white px-6 py-10 text-slate-600 dark:border-white/10 dark:bg-[#0A0F1C] dark:text-[#AEB6C4]">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-8 md:flex-row">
+        <div className="max-w-xs text-center md:text-left">
+          <p className="mb-2 text-xl font-bold text-slate-900 dark:text-[#E7ECF5]">
+            Mahdi Jahed
+          </p>
+          <p className="text-sm leading-relaxed">
+            Frontend-focused Full-Stack Developer crafting modern web applications
+            with React, Next.js, TypeScript, and scalable technologies.
           </p>
         </div>
 
-        <div className="flex space-x-6 text-2xl">
-          <a
-            href="https://t.me/Eng_IT_FrontD"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Mahdi Jahed on Telegram"
-            className="text-blue-500 dark:text-gray-100 hover:text-blue-700 dark:hover:text-gray-300 transition text-3xl"
-          >
-            <FaTelegram aria-hidden="true" />
-          </a>
-
-          <a
-            href="https://github.com/MahdiJDS"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Mahdi Jahed on Github"
-            className="hover:text-gray-900 dark:hover:text-gray-100 transition"
-          >
-            <FaGithub aria-hidden="true" />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/mahdi-jahed-jds"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Mahdi Jahed on Linkedin"
-            className="hover:text-gray-900 dark:hover:text-gray-100 transition"
-          >
-            <FaLinkedinIn aria-hidden="true" />
-          </a>
-          
-          <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=mahdijahed56@gmail.com"
-            target="_blank"
-            aria-label="Email"
-            className="hover:text-red-600 dark:hover:text-red-400 transition"
-          >
-            <FaEnvelope />
-          </a>
-        </div>
-
+        {/* Social links */}
+        <nav aria-label="Social media links">
+          <ul className="flex items-center gap-3">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-xl text-slate-600 transition-colors duration-300 hover:border-[#7C5CFF]/60 hover:bg-[#7C5CFF]/10 hover:text-[#6D45FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C5CFF] dark:border-white/15 dark:text-[#E7ECF5] dark:hover:text-[#8B7CFA]"
+                >
+                  <Icon aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
 
-      <div className="mt-8 text-center text-sm text-gray-700 dark:text-gray-300">
-        &copy; {new Date().getFullYear()} Mahdi Jahed. All rights reserved.
+      <div className="mt-8 flex flex-col items-center gap-1 text-center text-sm">
+        <p>&copy; {new Date().getFullYear()} Mahdi Jahed. All rights reserved.</p>
+        <span aria-hidden="true" className="font-mono text-xs text-slate-400 dark:text-[#8892A0]">
+        </span>
       </div>
     </footer>
   );
