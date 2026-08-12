@@ -79,85 +79,96 @@ const projects = [
 ];
 
 const Projects = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section
       id="projects"
-      className="w-screen h-full flex flex-col items-center mx-auto
-             px-6 py-10 
-             bg-gradient-to-b from-white to-gray-100
-             dark:from-gray-900 dark:to-gray-950"
+      aria-labelledby="projects-heading"
+      className="relative flex w-full flex-col items-center overflow-hidden bg-gradient-to-b from-white to-slate-50 px-6 py-20 dark:from-[#0A0F1C] dark:to-[#0B111F] md:py-24"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.4] [background-image:radial-gradient(circle,#0F172A0D_1px,transparent_1px)] [background-size:26px_26px] dark:opacity-[0.25] dark:[background-image:radial-gradient(circle,#FFFFFF14_1px,transparent_1px)]"
+      />
 
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+      <motion.div
+        initial={prefersReducedMotion ? undefined : { opacity: 0, y: 20 }}
+        whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="text-3xl font-bold mb-12 text-center text-gray-900 dark:text-white"
+        className="relative mb-12 flex flex-col items-center gap-3 text-center"
       >
-        Projects
-      </motion.h2>
+
+        <h2
+          id="projects-heading"
+          className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-[#E7ECF5] md:text-5xl"
+        >
+          Things I&apos;ve{" "}
+          <span className="bg-gradient-to-r from-[#8B7CFA] via-[#7C5CFF] to-[#5EE7C9] bg-clip-text text-transparent">
+            Built
+          </span>
+        </h2>
+      </motion.div>
 
       <Swiper
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
+        style={{ "--swiper-theme-color": "#7C5CFF", "--swiper-navigation-size": "22px" }}
+        autoplay={
+          prefersReducedMotion ? false : { delay: 3500, disableOnInteraction: false }
+        }
+        effect="coverflow"
+        grabCursor
+        centeredSlides
         slidesPerView={2}
-        loop={true}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2.5,
-        }}
+        loop
+        coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5 }}
         pagination={{ clickable: true }}
-        navigation={true}
+        navigation
         modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
         breakpoints={{
-          0: {
-            slidesPerView: 1,
-          },
-          992: {
-            slidesPerView: 3,
-          },
+          0: { slidesPerView: 1 },
+          992: { slidesPerView: 3 },
         }}
-        className="w-full"
+        className="relative w-full pb-10"
       >
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <SwiperSlide
-            key={index}
-            className="w-full pb-10 flex items-center justify-center"
+            key={project.github}
+            className="flex w-full items-center justify-center pb-10"
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-b from-[#1f1f3a] to-[#141421] h-full rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+              initial={prefersReducedMotion ? undefined : { scale: 0.94, opacity: 0 }}
+              whileInView={prefersReducedMotion ? undefined : { scale: 1, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+              className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#1f1f3a] to-[#141421] shadow-2xl"
             >
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="h-64 object-fill"
-                loading="lazy"
-              />
-              <div className="p-5 flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold mb-2 text-white">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 text-sm mb-4 flex-grow">
-                  {project.description.length > 80
-                    ? project.description.slice(0, 80) + "..."
-                    : project.description}
+              <div className="relative">
+                <img
+                  src={project.imageUrl}
+                  alt={`${project.title.replace(/\p{Emoji}/gu, "").trim()} — project screenshot`}
+                  width={640}
+                  height={256}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-52 w-full object-fill sm:h-60"
+                />
+              </div>
+
+              <div className="flex flex-grow flex-col p-5">
+                <h3 className="mb-2 text-xl font-semibold text-white">{project.title}</h3>
+                <p className="mb-4 flex-grow text-sm leading-relaxed text-gray-300 line-clamp-3">
+                  {project.description}
                 </p>
 
-                <div className="flex gap-4 mt-auto">
+                <div className="mt-auto flex gap-3">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 text-sm bg-blue-600 rounded-lg hover:bg-blue-500 transition text-white"
+                      aria-label={`View ${project.title} source on GitHub`}
+                      className="rounded-lg bg-[#7C5CFF] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#6D45FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7C5CFF]"
                     >
                       GitHub
                     </a>
@@ -167,7 +178,8 @@ const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 text-sm bg-green-600 rounded-lg hover:bg-green-500 transition text-white"
+                      aria-label={`Open live demo of ${project.title}`}
+                      className="rounded-lg border border-[#5EE7C9]/40 px-4 py-2 text-sm font-medium text-[#5EE7C9] transition hover:bg-[#5EE7C9]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5EE7C9]"
                     >
                       Live Demo
                     </a>
