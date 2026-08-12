@@ -42,7 +42,7 @@ const projects = [
   {
     title: "restaurant-app",
     description: "A modern and interactive restaurant web application built with React.js and Tailwind CSS.",
-    imageUrl: "/img/projects/Screenshot Restoran.avif",
+    imageUrl: "/img/projects/Screenshot-Restoran.avif",
     github: "https://github.com/MahdiJDS/restaurant-app",
     live: null,
   },
