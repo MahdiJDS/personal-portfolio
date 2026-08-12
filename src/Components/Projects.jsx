@@ -1,22 +1,19 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
-// Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 
-// استایل‌ها
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-
 
 const projects = [
   {
     title: "🏡 RealNest",
     description:
       "A production-ready full-stack real estate platform built with Next.js, Express.js, TypeScript, Prisma, PostgreSQL, Supabase, React Query, Zustand, and shadcn/ui.",
-    imageUrl: "/img/Screenshot-RealNest.png",
+    imageUrl: "/img/projects/Screenshot-RealNest.avif",
     github: "https://github.com/MahdiJDS/real-estate-platform",
     live: "https://real-estate-platforms.vercel.app/",
   },
@@ -24,60 +21,61 @@ const projects = [
     title: "🌐 Translator App",
     description:
       "A sleek, modern, and lightweight text translation app built with vanilla JavaScript, using the Google Translate API via RapidAPI.",
-    imageUrl: "/img/Screenshot Translate.png",
+    imageUrl: "/img/projects/Screenshot Translate.avif",
     github: "https://github.com/MahdiJDS/translator-App",
     live: null,
   },
   {
     title: "plant-landing-page",
     description: "plant-landing-page with tailwind",
-    imageUrl: "/img/Screenshot-Plant.png",
+    imageUrl: "/img/projects/Screenshot-Plant.avif",
     github: "https://github.com/MahdiJDS/plant-landing-page",
     live: "https://mahdijds.github.io/plant-landing-page/",
   },
   {
     title: "taskforge App",
     description: "A task manager app with React hooks and localStorage support.",
-    imageUrl: "/img/Screenshot-ToList2.png",
+    imageUrl: "/img/projects/Screenshot-ToList2.avif",
     github: "https://github.com/MahdiJDS/taskforge",
     live: null,
   },
   {
     title: "restaurant-app",
     description: "A modern and interactive restaurant web application built with React.js and Tailwind CSS.",
-    imageUrl: "img/Screenshot Restoran.png",
+    imageUrl: "/img/projects/Screenshot Restoran.avif",
     github: "https://github.com/MahdiJDS/restaurant-app",
     live: null,
   },
   {
     title: "Memory-game",
-    description: "A modern, responsive, and fun Memory Matching Game built with React and styled using Tailwind CSS.Flip the cards, match the pairs, and test your brain! 🧩",
-    imageUrl: "img/Screenshot memory-game.png",
+    description:
+      "A modern, responsive, and fun Memory Matching Game built with React and styled using Tailwind CSS. Flip the cards, match the pairs, and test your brain! 🧩",
+    imageUrl: "/img/projects/Screenshot memory-game.avif",
     github: "https://github.com/MahdiJDS/Memory-game-React",
     live: null,
   },
   {
     title: "online-exam-ts",
     description: "A simple yet powerful online examination platform built with TypeScript, TailwindCSS, and Vanilla JS.",
-    imageUrl: "img/Screenshot Exam.png",
+    imageUrl: "/img/projects/Screenshot Exam.avif",
     github: "https://github.com/MahdiJDS/online-exam-ts",
     live: null,
   },
   {
     title: "MotionDrive",
-    description: "An interactive React project where cars come alive .Click a car — watch it drive into your screen. Built with React, Tailwind, and GSAP",
-    imageUrl: "img/Screenshot-car_gsap.png",
+    description: "An interactive React project where cars come alive. Click a car — watch it drive into your screen. Built with React, Tailwind, and GSAP",
+    imageUrl: "/img/projects/Screenshot-car_gsap.avif",
     github: "https://github.com/MahdiJDS/MotionDrive",
     live: null,
   },
   {
     title: "Next-Shop",
-    description: "Next-Shop is not just an online shop—it's a fully interactive, animated built with Next.js, React, TypeScript, and Tailwind CSS. Every click, scroll, and interaction is designed to delight the user.",
-    imageUrl: "img/Screenshot-Nextshop.png",
+    description:
+      "Next-Shop is not just an online shop—it's a fully interactive, animated build with Next.js, React, TypeScript, and Tailwind CSS. Every click, scroll, and interaction is designed to delight the user.",
+    imageUrl: "/img/projects/Screenshot-Nextshop.avif",
     github: "https://github.com/MahdiJDS/Next-Shop",
     live: null,
   },
-
 ];
 
 const Projects = () => {
