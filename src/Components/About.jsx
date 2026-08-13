@@ -121,7 +121,7 @@ const About = () => {
           <p className="mb-6 leading-relaxed">
             I'm{" "}
             <span className="font-semibold text-blue-600 dark:text-blue-400">
-              Mahdi Jahed
+              Mahdi Jahed Dizaji
             </span>
             , a{" "}
             <span className="font-semibold text-indigo-600 dark:text-indigo-400">
