@@ -110,7 +110,7 @@ const Hero = () => {
             <span aria-hidden="true" className="text-[#0D9488] dark:text-[#5EE7C9]">
               ❯
             </span>
-            <span className="text-slate-500 dark:text-[#8892A0]">specialized_in:</span>
+            <span className="text-slate-500 dark:text-[#8892A0]">Focused_on:</span>
             <span ref={typeRef} className="text-slate-900 dark:text-[#E7ECF5]" />
             <span
               aria-hidden="true"
