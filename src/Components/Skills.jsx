@@ -189,21 +189,25 @@ const Skills = () => {
   return (
     <section
       id="skills"
+      aria-labelledby="skills-heading"
       className="scroll-mt-20 px-6 py-20 md:px-20 md:py-24
                  bg-gradient-to-br from-white via-gray-100 to-white
                  dark:from-[#0a192f] dark:to-[#0a192f]"
     >
       <div>
-        <h2 className="scroll-an text-3xl md:text-4xl font-bold text-gray-900 dark:text-white border-b-4 border-pink-600 inline-block mb-8">
+        <h2 id="skills-heading" className="scroll-an text-3xl md:text-4xl font-bold text-gray-900 dark:text-white border-b-4 border-pink-600 inline-block mb-8">
           Skills
         </h2>
 
         {/* Technical Skills */}
         <h3 className="scroll-an text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">🚀 Technical Skills</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center text-gray-800 dark:text-gray-300">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center text-gray-800 dark:text-gray-300">
           {technicalSkills.map((skill, index) => (
-            <div
+            <li
               key={skill.name}
+              aria-label={
+                skill.level ? `${skill.name}: ${skill.level}% proficiency` : skill.name
+              }
               className="scroll-an flex items-center justify-center cursor-pointer"
             >
               <div
@@ -232,22 +236,22 @@ const Skills = () => {
                   }}
                 />
               )}
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Soft Skills */}
         <h3 className="scroll-an text-2xl font-semibold text-gray-800 dark:text-gray-200 mt-12 mb-4">🧠 Soft Skills</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700 dark:text-gray-300 text-sm">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700 dark:text-gray-300 text-sm">
           {softSkills.map((skill, idx) => (
-            <div
+            <li
               key={idx}
               className="scroll-an bg-white dark:bg-[#112240] p-4 rounded-xl shadow-md hover:shadow-lg transition duration-300"
             >
               ✅ <strong>{skill.label}:</strong> {skill.desc}
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
