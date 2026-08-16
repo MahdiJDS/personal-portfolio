@@ -3,29 +3,37 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="img/smiling-redhaired-boy-illustration.png" />
+
+  <!-- Basic -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>
-    Mahdi Jahed | Front-End & Full Stack Developer | React, Next.js & TypeScript Portfolio
+    Mahdi Jahed | Front-End & Full Stack Developer | React, Next.js & TypeScript
   </title>
 
   <meta name="description"
-    content="Mahdi Jahed Dizaji is a Front-End and Full Stack Developer specializing in React, Next.js, TypeScript, Tailwind CSS, Express.js, PostgreSQL, Prisma, and modern web development." />
+    content="Mahdi Jahed Dizaji (مهدی جاهد دیزجی) is a Front-End and Full Stack Developer specializing in React, Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, PostgreSQL, and Prisma." />
 
   <meta name="author" content="Mahdi Jahed" />
 
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-  <meta name="googlebot" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
   <meta name="google-site-verification" content="OEgu4ziCjDbXQgw7qwgcDi2TnNORkwro_RnCkvPN-2s" />
 
   <meta name="theme-color" content="#0F172A" />
 
-  <link rel="preload" as="image" href="/img/IMG_Hero-section.avif" fetchpriority="high" />
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/img/smiling-redhaired-boy-illustration.png" />
 
+  <link rel="apple-touch-icon" href="/img/smiling-redhaired-boy-illustration.png" />
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://mahdijds.vercel.app/" />
+
+  <!-- Performance -->
+  <link rel="preload" as="image" href="/img/IMG_Hero-section.avif" fetchpriority="high" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -59,40 +67,67 @@
 
   <meta name="twitter:image:alt" content="Mahdi Jahed - Front-End and Full Stack Developer" />
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Mahdi Jahed",
-  "alternateName": [
-    "Mahdi Jahed Dizaji",
-    "مهدی جاهد دیزجی"
-  ],
-  "url": "https://mahdijds.vercel.app/",
-  "jobTitle": "Frontend-focused Full-Stack Developer",
-  "description": "Mahdi Jahed Dizaji is a Front-End and Full Stack Developer specializing in React, Next.js, TypeScript, Tailwind CSS, Express.js, PostgreSQL, Prisma, and modern web development.",
-  "knowsAbout": [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Tailwind CSS",
-    "Node.js",
-    "Express.js",
-    "Prisma",
-    "PostgreSQL"
-  ],
-  "sameAs": [
-    "https://github.com/MahdiJDS",
-    "https://t.me/Web_dev_JDS"
-  ]
-}
-</script>
-
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://mahdijds.vercel.app/#person",
+            "name": "Mahdi Jahed",
+            "alternateName": [
+              "Mahdi Jahed Dizaji",
+              "مهدی جاهد",
+              "مهدی جاهد دیزجی"
+            ],
+            "url": "https://mahdijds.vercel.app/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://mahdijds.vercel.app/img/IMG_About-section.avif"
+            },
+            "jobTitle": "Frontend-focused Full-Stack Developer",
+            "description": "Mahdi Jahed Dizaji is a Front-End and Full Stack Developer specializing in React, Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, PostgreSQL, and Prisma.",
+            "knowsAbout": [
+              "React",
+              "Next.js",
+              "TypeScript",
+              "JavaScript",
+              "Tailwind CSS",
+              "Node.js",
+              "Express.js",
+              "Prisma",
+              "PostgreSQL"
+            ],
+            "knowsLanguage": [
+              "English",
+              "Persian"
+            ],
+            "sameAs": [
+              "https://github.com/MahdiJDS",
+              "https://t.me/Web_dev_JDS"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://mahdijds.vercel.app/#website",
+            "url": "https://mahdijds.vercel.app/",
+            "name": "Mahdi Jahed Portfolio",
+            "alternateName": "پورتفولیو مهدی جاهد",
+            "description": "Personal portfolio of Mahdi Jahed Dizaji, a Front-End and Full Stack Developer specializing in React, Next.js, and TypeScript.",
+            "inLanguage": "en",
+            "publisher": {
+              "@id": "https://mahdijds.vercel.app/#person"
+            }
+          }
+        ]
+      }
+    </script>
 </head>
 
 <body>
   <div id="root"></div>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
