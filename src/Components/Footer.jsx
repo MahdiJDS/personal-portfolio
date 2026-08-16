@@ -2,7 +2,7 @@ import { FaTelegram, FaGithub, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
 
 const socialLinks = [
   {
-    href: "https://t.me/Eng_IT_FrontD",
+    href: "https://t.me/Web_dev_JDS",
     label: "Visit Mahdi Jahed on Telegram",
     icon: FaTelegram,
   },
