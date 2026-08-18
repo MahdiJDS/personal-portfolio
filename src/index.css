@@ -21,6 +21,15 @@ html {
     animation-timeline: view(60% 0%);
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 :root {
     --swiper-theme-color: #1d4ed8;
     --swiper-pagination-bullet-inactive-color: #999;
