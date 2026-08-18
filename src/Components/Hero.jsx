@@ -11,6 +11,14 @@ const Hero = () => {
   const charIndex = useRef(0);
   const timeoutId = useRef(null);
 
+  const scrollRef = useRef(null);
+
+  const autoScroll = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth;
+    }
+  };
+
   useEffect(() => {
     // Respect users who've asked for less motion, and avoid an endless
     // timer loop running in the background for them.
@@ -25,6 +33,7 @@ const Hero = () => {
 
       if (charIndex.current < currentWord.length) {
         typeRef.current.textContent += currentWord.charAt(charIndex.current);
+        autoScroll();
         charIndex.current++;
         timeoutId.current = setTimeout(typeWord, 90);
       } else {
@@ -38,6 +47,7 @@ const Hero = () => {
 
       if (charIndex.current > 0) {
         typeRef.current.textContent = currentWord.substring(0, charIndex.current - 1);
+        autoScroll();
         charIndex.current--;
         timeoutId.current = setTimeout(deleteWord, 45);
       } else {
@@ -104,6 +114,7 @@ const Hero = () => {
 
           {/* Typewriter — styled as a live terminal line */}
           <motion.div
+          ref={scrollRef}
             {...fadeUp(0.34)}
             className="mt-7 flex w-full items-center gap-2
     overflow-x-auto scrollbar-hide rounded-lg border
