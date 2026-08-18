@@ -105,7 +105,13 @@ const Hero = () => {
           {/* Typewriter — styled as a live terminal line */}
           <motion.div
             {...fadeUp(0.34)}
-            className="mt-7 flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 font-mono text-lg md:text-xl dark:border-white/10 dark:bg-white/[0.03]"
+            className="mt-7 flex w-full items-center gap-2
+    overflow-x-auto scrollbar-hide rounded-lg border
+    border-slate-200 bg-slate-50
+    px-4 py-3 font-mono text-lg
+    whitespace-nowrap
+    dark:border-white/10 dark:bg-white/[0.03]
+    md:text-xl"
           >
             <span aria-hidden="true" className="text-[#0D9488] dark:text-[#5EE7C9]">
               ❯
@@ -117,7 +123,7 @@ const Hero = () => {
               className="ml-0.5 h-5 w-[2px] animate-pulse bg-[#6D45FF] dark:bg-[#7C5CFF]"
             />
             <span className="sr-only">
-              React.js, Next.js, TypeScript, Modern Web Apps 
+              React.js, Next.js, TypeScript, Modern Web Apps
             </span>
           </motion.div>
 
@@ -187,7 +193,7 @@ const Hero = () => {
         </div>
 
       </div>
-    {/* </div> */}
+      {/* </div> */}
     </section >
   );
 };
